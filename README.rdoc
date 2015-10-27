@@ -2,25 +2,25 @@
 
 This was build by Eugene Idan
 
-1. Ruby version
+* Ruby version
 
 The ruby version used is ruby 2.2.3p173 (2015-08-18 revision 51636)
 
-2. System dependencies
+* System dependencies
 
 Minimum system requirement. This is a web application. Client machine should run a modern browser
 
-3. Configuration
+* Configuration
 
 Change database file to suit your personal settings
 
-4. Database creation
+* Database creation
 
-5. Services (job queues, cache servers, search engines, etc.)
+* Services (job queues, cache servers, search engines, etc.)
 
 No services yet.
 
-6. Deployment instructions
+* Deployment instructions
 
 Just playing around
 
