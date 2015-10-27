@@ -1,28 +1,26 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This was build by Eugene Idan
 
-Things you may want to cover:
+1. Ruby version
 
-* Ruby version
+The ruby version used is ruby 2.2.3p173 (2015-08-18 revision 51636)
 
-* System dependencies
+2. System dependencies
 
-* Configuration
+Minimum system requirement. This is a web application. Client machine should run a modern browser
 
-* Database creation
+3. Configuration
 
-* Database initialization
+Change database file to suit your personal settings
 
-* How to run the test suite
+4. Database creation
 
-* Services (job queues, cache servers, search engines, etc.)
+5. Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+No services yet.
 
-* ...
+6. Deployment instructions
 
+Just playing around
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
