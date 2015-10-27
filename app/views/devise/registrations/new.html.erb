@@ -1,0 +1,35 @@
+
+<div class="row">
+  <div class="col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+    <div class="page-login-form box login">     
+
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name), class: "form-validate") do |f| %>
+          <div class="form-group">
+            <div class="group-control">              
+              <%= f.email_field :email, autofocus: true, placeholder:"Email Address" , class: "validate-username required", id: "username", size: "25" %>
+            </div>
+          </div>
+
+          <div class="form-group">  
+            <div class="group-control"> 
+            <% if @minimum_password_length %>
+              <em>(<%= @minimum_password_length %> characters minimum)</em>
+            <% end %>          
+              <%= f.password_field :password, autocomplete: "off", class: "validate-password required", placeholder:"Password", id:"password", size: "25" %>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="group-control">              
+              <%= f.password_field :password_confirmation, autocomplete: "off", autofocus: "false", placeholder:"Confirm Password" , class: "validate-password required", id: "confirm_password", size: "25" %>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <button type="submit" class="btn btn-success btn-lg btn-block btn-login">Sign Up</button>
+          </div>
+        <% end %>   
+    </div>
+    <%= render "devise/shared/links" %> 
+  </div>
+</div>   

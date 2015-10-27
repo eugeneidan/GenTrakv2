@@ -1,0 +1,102 @@
+
+
+<div class="row">
+  <div class="col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+    <div class="page-login-form box login">     
+        <h3><%= yield(:formTitle) %></h3>
+        <%= form_for(@spare_part, class: "form-validate") do |f| %>
+          <div class="form-group">
+            <% if @spare_part.errors.any? %>
+              <div id="error_explanation">
+                <h2><%= pluralize(@spare_part.errors.count, "error") %> prohibited this spare_part from being saved:</h2>
+                <ul>
+                <% @spare_part.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+                <% end %>
+                </ul>
+              </div>
+            <% end %>
+
+            <div class="group-control">              
+              <%= f.text_field :name, autofocus: true, placeholder:"Name" , class: "validate-name required", id: "name", size: "25" %>
+            </div>
+          </div>
+
+          <div class="form-group">  
+            <div class="group-control">           
+              <%= f.text_field :partNo, autocomplete: "on", class: "validate-password required", placeholder:"Part Number", id:"partNo", size: "25" %>
+            </div>
+          </div>
+
+          <div class="form-group">  
+            <div class="group-control">           
+              <%= f.text_area :desc, autocomplete: "off", class: "validate-password required", placeholder:"Description", id:"desc", size: "25" %>
+            </div>
+          </div>
+
+          <div class="form-group">  
+            <div class="group-control">           
+              <%= f.number_field :unitPrice, autocomplete: "off", class: "validate-password required", placeholder:"Unit Price", id:"unitPrice", size: "25" %>
+            </div>
+          </div>
+
+          <div class="form-group">  
+            <div class="group-control">           
+              <%= f.number_field :qty, autocomplete: "off", class: "validate-password required", placeholder:"Amount in stock", id:"qty", size: "25" %>
+            </div>
+          </div>
+<!-- 
+            <div class="radioBtn">
+              <label>
+                 Restock?
+              </label>
+              <% for option in ['Yes', 'No'] %>
+                <%= option.humanize %>
+                <%= radio_button_tag :order, option, class:"inputbox" %>
+              <% end %>            
+            </div>
+           -->
+
+          <div class="form-group">
+            <button type="submit" class="btn btn-success btn-lg btn-block btn-login">Submit</button>
+          </div>
+        <% end %>   
+        <%= link_to ' Back', spare_parts_path, class: 'glyphicon glyphicon-arrow-left' %>
+    </div>
+  </div>
+</div>   
+
+<!-- 
+
+<%= form_for(@spare_part) do |f| %>
+  <% if @spare_part.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@spare_part.errors.count, "error") %> prohibited this spare_part from being saved:</h2>
+
+      <ul>
+      <% @spare_part.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+ 
+ 
+  <div class="field">
+    <%= f.label :qty %><br>
+    <%= f.number_field :qty %>
+  </div>
+  <div class="field">
+    <%= f.label :order %><br>
+    <%= f.check_box :order %>
+  </div>
+  <div class="field">
+    <%= f.label :shippingStatus %><br>
+    <%= f.text_field :shippingStatus %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+ -->

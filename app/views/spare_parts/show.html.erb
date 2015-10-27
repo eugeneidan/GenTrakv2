@@ -1,0 +1,45 @@
+<h3></h3>
+<div class="row">
+  <div class="col-md-4 col-md-offset-3 col-md-4 col-md-offset-2">
+    <div class="panel panel-default">
+      <div class="panel-heading"><%= @spare_part.name.capitalize %></div>      
+      
+      <p>
+        <strong>Part Number:</strong>
+        <%= @spare_part.partNo %>
+      </p>
+
+      <p>
+        <strong>Description:</strong>
+        <%= @spare_part.desc %>
+      </p>
+
+      <p>
+        <strong>Total Value:</strong>
+        $<%= @spare_part.unitPrice*@spare_part.qty %>
+      </p>
+
+      <p>
+        <strong>Qty:</strong>
+        <%= @spare_part.qty %>
+      </p>
+
+      <p>
+        <strong>Restock Needed:</strong>
+        <% if @spare_part.qty > 20 %>
+        Yes
+        <% else %>
+        No
+        <% end %>
+      </p>
+
+      <p>
+        <strong>Shipping Status:</strong>
+        <%= @spare_part.shippingStatus %>
+      </p>
+
+      <%= link_to 'Edit', edit_spare_part_path(@spare_part) %> |
+      <%= link_to 'View All', spare_parts_path %>
+    </div>
+  </div>
+</div>

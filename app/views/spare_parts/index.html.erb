@@ -1,0 +1,58 @@
+<h2></h2>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3 col-md-6 col-md-offset-2">
+    <!-- <div class="page-login-form box login">  -->
+    <div class="panel panel-default">
+      <!-- Default panel contents -->
+      <div class="panel-heading">List of Spare Parts</div>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Part No</th>
+            <th>Description</th>
+            <th>Unitprice</th>
+            <th>Qty</th>
+            <th>Order?</th>
+            <th>Shipping Status</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @spare_parts.each do |spare_part| %>
+            <tr>
+              <td><%= spare_part.name %></td>
+              <td><%= spare_part.partNo %></td>
+              <td><%= spare_part.desc %></td>
+              <td><%= spare_part.unitPrice %></td>
+              <td><%= spare_part.qty %></td>
+              <td>
+                <% if spare_part.qty > 20 %>
+                  Yes
+                <% else %>
+                  No
+                 <% end %>
+              </td>
+              <td><%= spare_part.shippingStatus %></td>
+              <td>
+                <%= link_to '', spare_part, class: 'glyphicon glyphicon-folder-open' %>
+              </td>
+              <td>
+                <%= link_to '', edit_spare_part_path(spare_part), class: 'glyphicon glyphicon-pencil' %>
+              </td>
+              <td>                
+                <%= link_to '', spare_part, class: 'glyphicon glyphicon-trash', method: :delete, data: { confirm: 'Are you sure?'}
+                %>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>      
+    </div>
+    <%= link_to 'New Spare part', add_new_spares_url %>
+  </div>
+</div>
+
+  

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<!-- saved from url=(0024)http://getbootstrap.com/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- Meta, title, CSS, favicons, etc. -->
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<meta name="author" content="">
+<meta name="google-site-verification" content="">
+
+<title>
+    Eugene Test App
+</title>
+
+<!-- Bootstrap core CSS -->
+
+<%= stylesheet_link_tag "application", "docs.min", "shapebootstrap.icon", "font-awesome.min", "magnific-popup", "preset1", "template" %>
+
+
+
+<!-- Documentation extras -->
+
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tag %>
+
+<!-- Favicons -->
+<!-- <link rel="apple-touch-icon" href="http://getbootstrap.com/apple-touch-icon.png">
+<link rel="icon" href="http://getbootstrap.com/favicon.ico"> -->
+
+ <!-- 
+  <style>.carbonad{display:block;background:#fdfdfd;background-image:-moz-linear-gradient(top,#f8f8f8,#fdfdfd);background-image:-webkit-gradient(linear,left top,left bottom,color-stop(0,#f8f8f8),color-stop(1,#fdfdfd));border:1px solid #d5d5d5;font-family:Lucida Grande,Arial,Helvetica,sans-serif;font-size:11px;height:118px;line-height:15px;overflow:hidden;width:300px}.carbonad-img{border:none;display:inline;float:left;height:100px;margin:9px;width:130px}.carbonad-text{display:inline;float:left;width:142px;padding-top:13px}.carbonad-text a{color:#000;text-decoration:none;text-transform:none;}.carbonad-tag{float:left;margin-top:9px;text-align:center;width:142px;color:#999}.carbonad-tag a{color:#999;text-decoration:none}</style>
+-->
+  </head>
+
+
+  <body class="bs-docs-home">
+     <a id="skippy" class="sr-only sr-only-focusable" href=""><div class="container"><span class="skiplink-text">Skip to main content</span></div></a>
+
+
+  <!-- Flash alerts and notices -->
+  <% if notice %>
+      <span class="v4-tease"><%= notice %></span>
+  <% end %>
+  
+
+  <% if alert %>    
+    <div class="alert alert-danger" role="alert">
+      <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+      <span class="sr-only">Error:</span>
+        <%= alert %>
+    </div>
+  <% end %>
+  <!-- end of alert -->
+          <!-- Docs master nav -->
+  <header class="navbar navbar-static-top bs-docs-nav" id="top" role="banner">
+    <div class="container">
+      <div class="navbar-header">
+        <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#bs-navbar" aria-controls="bs-navbar" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a href="" class="navbar-brand">GenTrak</a>
+      </div>
+      <% if user_signed_in? %>
+        <nav id="bs-navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li>
+              <a href="">General Overview</a>
+            </li>
+            <li>
+              <a href="">Incoming</a>
+            </li>
+            <li>
+              <a href="">Outgoing</a>
+            </li>
+            <li>
+              <a href="">Repairs</a>
+            </li>
+            <li>
+              <%= link_to "Spares Parts", spare_parts_url %>
+            </li>
+            <li>
+              <a><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="" onclick=""><%= current_user.email %></a></li>
+            <li><a href="" onclick="">Settings</a></li>
+            <li><%= link_to("Sign Out", destroy_user_session_path) %>
+          </ul>
+        </nav>
+        <% else %>
+          <nav id="bs-navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li>
+              
+            </li>
+            <li>
+              
+            </li>
+            <li>
+              
+            </li>
+            <li>
+              
+            </li>
+            <li>
+              
+            </li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><%= link_to "Sign Up", new_user_registration_url %></li>            
+            <li><%= link_to "Sign In", new_user_session_url %></li>
+          </ul>
+        </nav>
+        <% end %>
+
+    </div>
+  </header>
+
+    <%= yield %>
+<!-- 
+<%= javascript_include_tag "jquery.min" %>
+<%= javascript_include_tag "bootstrap.min" %>
+<%= javascript_include_tag "docs.min" %> -->
+
+   </body>
+
+   </html>

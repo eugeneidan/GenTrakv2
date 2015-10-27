@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  partNo: MyString
+  desc: MyText
+  unitPrice: 1
+  qty: 1
+  order: false
+  shippingStatus: 
+
+two:
+  name: MyString
+  partNo: MyString
+  desc: MyText
+  unitPrice: 1
+  qty: 1
+  order: false
+  shippingStatus: 

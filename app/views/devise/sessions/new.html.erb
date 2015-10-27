@@ -1,0 +1,38 @@
+<h2></h2>
+
+<div class="row">
+  <div class="col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+    <div class="page-login-form box login">     
+
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name), class: "form-validate") do |f| %>
+
+        <h3>Sign In</h3>
+
+          <div class="form-group">
+            <div class="group-control">              
+              <%= f.email_field :email, autofocus: true, placeholder:"Email Address" , class: "validate-username required", id: "username", size: "25" %>
+            </div>
+          </div>
+
+          <div class="form-group">  
+            <div class="group-control">           
+              <%= f.password_field :password, autocomplete: "off", class: "validate-password required", placeholder:"Password", id:"password", size: "25" %>
+            </div>
+          </div>
+
+          <% if devise_mapping.rememberable? -%>
+            <div class="checkbox">
+              <label>
+                <%= f.check_box :remember_me, class:"inputbox" %> 
+              </label>            
+            </div>
+          <% end -%>
+
+          <div class="form-group">
+            <button type="submit" class="btn btn-success btn-lg btn-block btn-login">Sign in</button>
+          </div>
+        <% end %>   
+    </div>
+    <%= render "devise/shared/links" %> 
+  </div>
+</div>   
